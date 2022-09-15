@@ -13,4 +13,4 @@ topology-template:
                     disk-size: 10Gb
                     mem-size: 4096MB
    
-   ---
+   ...
