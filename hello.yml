@@ -1,0 +1,14 @@
+tosca-definitions-verstion: tosca-yaml-1-3tosca-simple-yaml-1-3
+description:
+topology-template:
+    node-template
+        db-server:
+            type: tosca.nodes.compute
+            capabilities:
+            # Host container properties
+            host:
+                properties:
+                    num-cpus:1
+                    disk-size: 10Gb
+                    mem-size: 4096MB
+                    
