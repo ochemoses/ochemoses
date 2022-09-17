@@ -1,0 +1,21 @@
+---
+    tosca_definitions_version: tosca_simple_yaml_1_3
+    
+    node_types:
+      source_node_types:
+        derived_from: tosca.nodes.SoftwareComponent
+        attributes:
+          rest_api_attribute:
+            description: Rest API 
+            type: string
+            default: "https://defaultweb.com"       
+        interfaces:
+            Standard:
+              operations:
+                create:
+                  implementation: playbooks/create.yaml
+                  inputs:
+                    link:
+                      type: string
+                      default: {get_attribute: [SELF, rest_api_attribute]}   
+    
